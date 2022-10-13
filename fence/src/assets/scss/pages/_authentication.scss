@@ -1,0 +1,15 @@
+main.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    min-height: 100vh;
+    background-image: url(../../images/background0.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .logo{
+        height: 64px;
+    }
+}
