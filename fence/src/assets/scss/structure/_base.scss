@@ -1,6 +1,11 @@
 /* ====== Colour Palette ====== */
 $sheen-green:#91e000;
 $sheen-green-rgba:rgba(145, 224, 0, 1);
+$spanish-green:#138540;
+$spanish-green-rgba:rgba(19, 133, 64, 1);
+$spanish-green-faint:rgba(19, 133, 64, 0.15);
+$forest-green:#259237;
+$forest-green-rgba:rgba(37, 146, 55, 1);
 $cultured:#faf8f8;
 $culutured-rgba:rgba(250, 248, 248, 1);
 $middle-grey:#82816d;
@@ -35,7 +40,7 @@ $poppins: 'Poppins', sans-serif;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    //border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1rem;
 }
 %glass2{
@@ -62,6 +67,11 @@ $poppins: 'Poppins', sans-serif;
     /* ===== Colour Palette ===== */
     --sheen-green:#{$sheen-green};
     --sheen-green-rgba:#{$sheen-green-rgba};
+    --spanish-green:#{$spanish-green};
+    --spanish-green-faint:#{$spanish-green-faint};
+    --spanish-green-rgba:#{$spanish-green-rgba};
+    --forest-green:#{$forest-green};
+    --forest-green-rgba:#{$forest-green-rgba};
     --cultured:#{$cultured};
     --cultured-rgba:#{$culutured-rgba};
     --middle-grey:#{$middle-grey};

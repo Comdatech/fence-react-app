@@ -11,37 +11,36 @@ const Login = () => {
         <Container className="auth-page-content">
           <Flex className="auth-card">
             <Flex className="ai-center jc-center fd-col">
-              <Flex className='auth-logo'>
+              <Flex className="auth-logo pb-3">
                 <img src={logo} alt="Comdatech Logo" className="logo" />
-              </Flex>
-              <FormControl>
                 <Text
-                  //bgGradient="linear(to-l, #5c2331, #b11225)"
+                  bgGradient="linear(to-l, #138540, #91e000)"
                   bgClip="text"
-                  className="heading-1 w80"
+                  fontSize="2xl"
+                  className="heading-1"
                 >
-                  Welcome back!
+                  Fence Monitoring App
                 </Text>
-              </FormControl>
+              </Flex>
             </Flex>
-            <Flex className="mt6">
-              <FormControl className="p4 w100">
-                <FormLabel htmlFor="username" className="fw600">
-                  Username or email address
+            <Flex className=" p-3 pb-4 ">
+              <FormControl >
+                <FormLabel htmlFor="username">
+                  Email
                 </FormLabel>
                 <Input
                   id="username"
                   name="username"
-                  type="text"
-                  placeholder="Username"
+                  type="email"
+                  placeholder="Email Address"
                   variant="filled"
                   bg="green.100"
                 />
               </FormControl>
             </Flex>
-            <Flex>
+            <Flex className='pb-4'>
               <FormControl className="p4 w100">
-                <FormLabel htmlFor="password" className="fw600">
+                <FormLabel htmlFor="password">
                   Password
                 </FormLabel>
                 <Input
@@ -62,9 +61,7 @@ const Login = () => {
               >
                 Login
               </Button>
-              <Box className="btn1">
-
-              </Box>
+              <Box className="btn1"></Box>
             </Flex>
           </Flex>
         </Container>
