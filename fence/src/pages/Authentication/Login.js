@@ -3,7 +3,7 @@ import React from 'react';
 import "../../assets/scss/pages/authentication.scss";
 import ParticleBackground from '../../components/particleBackground';
 import logo from "../../assets/icons/comdatech-icon-colour-dark.png";
-import {faEye, faEyeSlash,faAt, faLock} from "@fortawesome/free-solid-svg-icons";
+import {faEye, faEyeSlash,faEnvelope, faLock} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
   const handleClick = () => setShow(!show);
 
   const eyeIcon = <FontAwesomeIcon className="icon" icon={faEye} />;
-  const emailIcon = <FontAwesomeIcon className="icon" icon={faAt} />;
+  const emailIcon = <FontAwesomeIcon className="icon" icon={faEnvelope} />;
   const lockIcon = <FontAwesomeIcon className="icon" icon={faLock} />;
   const eyeSlashIcon = <FontAwesomeIcon className="icon" icon={faEyeSlash} />;
   return (
