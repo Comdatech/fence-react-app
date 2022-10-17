@@ -27,6 +27,11 @@
                     margin-right: 10px;
                 }
             }
+            .dummy-icon{
+                .icon{
+                    color: transparent;
+                }
+            }
         }
     }
 }
@@ -45,9 +50,10 @@
 }
 
 .auth-one-bg{
-    background-image: url("../../images/fence4.jpg");
+    //background-image: url("../../images/fence4.jpg");
     background-position: center;
     background-size: cover;
+    background-color: var(--spanish-green-faint);
 
     .bg-overlay{
         background: linear-gradient(90deg, rgba(145,224,0,1) 0%, rgba(18,16,14,1) 100%);
