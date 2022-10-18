@@ -1,10 +1,11 @@
-import { Container, Flex, Text, FormControl, FormLabel, Input, InputLeftAddon,Link, Button, InputGroup, InputRightElement, Circle, Box} from '@chakra-ui/react';
+import { Container, Flex, Text, FormControl, FormLabel, Input, InputLeftAddon, Button, InputGroup, InputRightElement, Circle, Box} from '@chakra-ui/react';
 import React from 'react';
 import "../../assets/scss/pages/authentication.scss";
 import ParticleBackground from '../../components/particleBackground';
 import logo from "../../assets/icons/comdatech-icon-colour-dark.png";
 import {faEye, faEyeSlash,faEnvelope, faLock} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   const [show, setShow] = React.useState(false);
@@ -14,6 +15,8 @@ const Login = () => {
   const emailIcon = <FontAwesomeIcon className="icon" icon={faEnvelope} />;
   const lockIcon = <FontAwesomeIcon className="icon" icon={faLock} />;
   const eyeSlashIcon = <FontAwesomeIcon className="icon" icon={faEyeSlash} />;
+
+  document.title = "Sign In | Comdatech";
   return (
     <>
       <ParticleBackground>
@@ -24,8 +27,6 @@ const Login = () => {
                 <Flex className="auth-logo">
                   <img src={logo} alt="Comdatech Logo" className="logo" />
                   <Text
-                    bgGradient="linear(to-l, #138540, #82816d)"
-                    bgClip="text"
                     fontSize="2xl"
                     className="heading-1"
                   >
@@ -35,8 +36,6 @@ const Login = () => {
               </Flex>
               <Flex className="pb-3">
                 <Text
-                  bgGradient="linear(to-l,  #138540,#82816d)"
-                  bgClip="text"
                   fontSize="sm"
                 >
                   Sign in to continue.
@@ -71,9 +70,13 @@ const Login = () => {
                       Password
                     </FormLabel>
                     <Box>
-                      <Link fontSize="sm" to="/forgot-password">
+                      <NavLink
+                        className="fw-semibold text-primary text-decoration-underline"
+                        fontSize="sm"
+                        to="/forgot-password"
+                      >
                         Forgot Password?
-                      </Link>
+                      </NavLink>
                     </Box>
                   </Flex>
                   <InputGroup>
@@ -103,10 +106,19 @@ const Login = () => {
               </Flex>
             </Flex>
           </form>
+          <Text className="pt-4">
+            Don't have an account ?{" "}
+            <NavLink
+              to="/sign-up"
+              className="fw-semibold text-primary text-decoration-underline"
+            >
+              Sign Up
+            </NavLink>
+          </Text>
         </Container>
       </ParticleBackground>
     </>
   );
 }
 
-export default Login
+export default Login;
