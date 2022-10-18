@@ -18,7 +18,7 @@ const ForgotPassword = () => {
         <Container className="auth-page-content">
           <form>
             <Flex className="auth-card">
-              <Flex>
+              <Flex className='pt-4'>
                 <Text
                   bgGradient="linear(to-l, #138540, #259237)"
                   bgClip="text"
@@ -56,7 +56,7 @@ const ForgotPassword = () => {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Email Address"
+                      placeholder="Enter Email Address"
                       variant="filled"
                       bg="green.100"
                     />

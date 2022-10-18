@@ -52,7 +52,7 @@ const Login = () => {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Email Address"
+                      placeholder="Enter Email Address"
                       variant="filled"
                       bg="green.100"
                     />
