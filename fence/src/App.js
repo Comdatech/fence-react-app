@@ -4,6 +4,7 @@ import { BrowserRouter} from "react-router-dom";
 import Login from "./pages/Authentication/Login";
 import ForgotPassword from "./pages/Authentication/ForgotPassword";
 import SignUp from "./pages/Authentication/SignUp";
+import Home from "./pages/Landing/home";
 
 class App extends React.Component {
   constructor() {
@@ -18,9 +19,12 @@ class App extends React.Component {
         <BrowserRouter>
           <Routes>
             {/* Authentication Page routes*/}
-            <Route index path="/" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/sign-up" element={<SignUp />} />
+
+            <Route path="/home" element={<Home />} />
+            
           </Routes>
         </BrowserRouter>
       </>

@@ -1,0 +1,16 @@
+@use "../../structure/base";
+
+.user-menu{
+    
+    .menu-btn{
+        .container{
+            flex-flow: row nowrap;
+            align-items: center;
+            margin: auto auto;
+            .avatar{}
+            p{
+                text-align: center;
+            }
+        }
+    }
+}

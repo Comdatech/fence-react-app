@@ -1,0 +1,19 @@
+URI
+https://cdt-db.documents.azure.com:443/
+
+Primary Key 
+c5rmPDmjxkTHsrBwZNkmg7pLz9XLQrjSMDHsB7f1Kpk5pmnO6ZxwV572PaY2kQbriOzrBw5rWEOBjyUzjoWWlA==
+
+Secondary Key
+OwQ1lqJDdXtm0GP0ztYQrn6hRoSfX1FBa7krYpuE1dnpGGZ2SHlndFpkiSVKJDrmnySu6M7swoKAXo5FKvQ82g==
+
+Primary Connection String 
+AccountEndpoint=https://cdt-db.documents.azure.com:443/;AccountKey=c5rmPDmjxkTHsrBwZNkmg7pLz9XLQrjSMDHsB7f1Kpk5pmnO6ZxwV572PaY2kQbriOzrBw5rWEOBjyUzjoWWlA==;
+
+Secondary Connection String 
+AccountEndpoint=https://cdt-db.documents.azure.com:443/;AccountKey=OwQ1lqJDdXtm0GP0ztYQrn6hRoSfX1FBa7krYpuE1dnpGGZ2SHlndFpkiSVKJDrmnySu6M7swoKAXo5FKvQ82g==;
+
+
+export COSMOS_ENDPOINT=https://cdt-db.documents.azure.com:443/
+
+export COSMOS_KEY=c5rmPDmjxkTHsrBwZNkmg7pLz9XLQrjSMDHsB7f1Kpk5pmnO6ZxwV572PaY2kQbriOzrBw5rWEOBjyUzjoWWlA==
