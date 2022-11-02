@@ -3,14 +3,8 @@
 .user-menu{
     
     .menu-btn{
-        .container{
-            flex-flow: row nowrap;
-            align-items: center;
-            margin: auto auto;
-            .avatar{}
-            p{
-                text-align: center;
-            }
+        .username{
+            padding-left: 3px;
         }
     }
 }

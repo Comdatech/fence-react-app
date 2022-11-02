@@ -9,6 +9,7 @@ import {
   Flex,
   Box,
   Button,
+  Center,
   Text,
 } from "@chakra-ui/react";
 import {
@@ -39,16 +40,16 @@ const Header = () => {
           <Box></Box>
           <Menu isLazy className="user-menu">
             <MenuButton className="menu-btn" as={Button} rightIcon={downIcon}>
-              <Flex className='container'>
+              <Center className='container'>
                 <Avatar
-                  bg="teal.500"
+                  bg="green.500"
                   size="sm"
                   name={username}
                   src="dummy pic here"
                   className="avatar"
                 />
-                <p className="username">{username}</p>
-              </Flex>
+                <Text className="username">{username}</Text>
+              </Center>
             </MenuButton>
             <MenuList>
               <MenuItem icon={userIcon}>Profile</MenuItem>
