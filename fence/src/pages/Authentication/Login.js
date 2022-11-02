@@ -1,11 +1,39 @@
-import { Container, Flex, Text, FormControl, FormLabel, Input, InputLeftAddon, Button, InputGroup, InputRightElement, Circle, Box} from '@chakra-ui/react';
-import React from 'react';
+import React from "react";
+
+
+// import local assets
 import "../../assets/scss/pages/authentication.scss";
-import ParticleBackground from '../../components/particleBackground';
 import logo from "../../assets/icons/comdatech-icon-colour-dark.png";
-import {faEye, faEyeSlash,faEnvelope, faLock} from "@fortawesome/free-solid-svg-icons";
+
+
+//import local components
+import ParticleBackground from "../../components/particleBackground";
+
+
+//import external libraries and assets
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import {
+  faEye,
+  faEyeSlash,
+  faEnvelope,
+  faLock,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  Container,
+  Flex,
+  Text,
+  FormControl,
+  FormLabel,
+  Input,
+  InputLeftAddon,
+  Button,
+  InputGroup,
+  InputRightElement,
+  Circle,
+  Box,
+} from "@chakra-ui/react";
+
 
 const Login = () => {
   const [show, setShow] = React.useState(false);
@@ -26,20 +54,13 @@ const Login = () => {
               <Flex>
                 <Flex className="auth-logo">
                   <img src={logo} alt="Comdatech Logo" className="logo" />
-                  <Text
-                    fontSize="2xl"
-                    className="heading-1"
-                  >
+                  <Text fontSize="2xl" className="heading-1">
                     Fence Monitoring App
                   </Text>
                 </Flex>
               </Flex>
               <Flex className="pb-3">
-                <Text
-                  fontSize="sm"
-                >
-                  Sign in to continue.
-                </Text>
+                <Text fontSize="sm">Sign in to continue.</Text>
               </Flex>
               <Flex className="pb-4">
                 <FormControl className="">
@@ -119,6 +140,6 @@ const Login = () => {
       </ParticleBackground>
     </>
   );
-}
+};
 
 export default Login;

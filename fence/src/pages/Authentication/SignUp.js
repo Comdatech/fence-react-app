@@ -1,14 +1,29 @@
-import {  Button, Container, Flex, FormControl, FormLabel, Input, InputGroup, InputLeftAddon, InputRightElement, Text } from '@chakra-ui/react';
 import React from 'react';
+
+//import local assets 
 import "../../assets/scss/pages/authentication.scss";
+
+//import local components
 import ParticleBackground from "../../components/particleBackground";
-import {
-  faEnvelope,
-  faUser,
-  faLock,
-} from "@fortawesome/free-solid-svg-icons";
+
+//import external libraries and assets
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from 'react-router-dom';
+import {
+  Button,
+  Container,
+  Flex,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightElement,
+  Text,
+} from "@chakra-ui/react";
+import { faEnvelope, faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+
+
 const SignUp = () => {
     const emailIcon = <FontAwesomeIcon className="icon" icon={faEnvelope} />;
     const userIcon = <FontAwesomeIcon className="icon" icon={faUser} />;

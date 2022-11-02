@@ -1,4 +1,12 @@
 import React from 'react';
+
+//import local assets
+import "../../assets/scss/components/Navigation/navigation.scss";
+
+//import local components
+
+//import external libraries and assets
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Menu,
   MenuButton,
@@ -19,7 +27,7 @@ import {
   faLifeRing,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Header = () => {
 
@@ -38,8 +46,8 @@ const Header = () => {
         <Flex></Flex>
         <Flex>
           <Box></Box>
-          <Menu isLazy className="user-menu">
-            <MenuButton className="menu-btn" as={Button} rightIcon={downIcon}>
+          <Menu isLazy className="profile-dropdown">
+            <MenuButton className="profile-btn" as={Button} rightIcon={downIcon}>
               <Center className='container'>
                 <Avatar
                   bg="green.500"

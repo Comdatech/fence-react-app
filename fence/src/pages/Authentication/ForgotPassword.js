@@ -1,11 +1,30 @@
-import { Container, Flex, Text, Alert, AlertIcon, FormControl, FormLabel, Button, InputGroup, InputLeftAddon, Input, InputRightElement } from '@chakra-ui/react';
 import React from 'react';
-import ParticleBackground from '../../components/particleBackground';
-import {
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+//import local assets 
+
+
+//import local components
+import ParticleBackground from "../../components/particleBackground";
+
+
+//import external libraries and assets
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from 'react-router-dom';
+import {
+  Container,
+  Flex,
+  Text,
+  Alert,
+  AlertIcon,
+  FormControl,
+  FormLabel,
+  Button,
+  InputGroup,
+  InputLeftAddon,
+  Input,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 
 const ForgotPassword = () => {
     const emailIcon = <FontAwesomeIcon className="icon" icon={faEnvelope} />;
