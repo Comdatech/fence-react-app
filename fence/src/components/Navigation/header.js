@@ -97,18 +97,20 @@ const Header = () => {
       <Flex
         direction="row"
         justify="space-between"
-        className="pt-3 pb-3"
+        className="p-3 header"
         boxShadow="lg"
       >
-        {/*  Search Bar  */}
+        {/* Sidebar Icon Menu and Current Page Display  */}
         <Flex>
+
           <IconButton
             icon={menuIcon}
             onClick={toggleSidebar}
             _active={{ color: "#259237" }}
             _hover={{ color: "#259237" }}
-            className="menu-icon ml-2 mr-4"
+            className="menu-icon  mr-4"
           />
+
           <Flex align="center">
             <Button
               colorScheme="green"
@@ -150,7 +152,7 @@ const Header = () => {
           </Flex>
         </Flex>
 
-        {/* NOtifications and User Profile Dropdown Menus */}
+        {/* Notifications and User Profile Dropdown Menus */}
         <Flex>
           <Menu isLazy className="notifications-dropdown">
             <MenuButton
@@ -164,7 +166,7 @@ const Header = () => {
           </Menu>
           <Menu isLazy className="profile-dropdown">
             <MenuButton
-              className="profile-btn mr-4"
+              className="profile-btn"
               as={Button}
               rightIcon={downIcon}
               _active={{ color: "#259237" }}
