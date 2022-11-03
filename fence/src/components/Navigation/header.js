@@ -56,7 +56,7 @@ const Header = () => {
                   src="dummy pic here"
                   className="avatar"
                 />
-                <Text className="username">{username}</Text>
+                <Text paddingLeft="1" className="username">{username}</Text>
               </Center>
             </MenuButton>
             <MenuList>
