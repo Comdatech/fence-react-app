@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //import local assets
 import "../../assets/scss/components/Navigation/navigation.scss";
@@ -26,6 +26,8 @@ import {
   faArrowRightFromBracket,
   faLifeRing,
   faChevronDown,
+  faBars,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 
@@ -38,14 +40,36 @@ const Header = () => {
     const helpIcon = <FontAwesomeIcon className="icon" icon={faLifeRing} />;
     const downIcon =  <FontAwesomeIcon className="icon" icon={faChevronDown} />;
     const notificationIcon = <FontAwesomeIcon className='icon' icon={faBell}/>;
+    
 
+    const [isSidebar, setSidebar] = useState(false);
+    const toggleSidebar = () => {
+      setSidebar(!isSidebar);
+    };
+    let menuIcon;
+    if (isSidebar) {
+      menuIcon = <FontAwesomeIcon className="icon" icon={faXmark} />;
+    } else {
+      menuIcon = <FontAwesomeIcon className="icon" icon={faBars} />;
+    }
     //dynamic variables will be decalred here at a later stage
     const username = "Dummy Name";
 
   return (
     <>
-      <Flex direction="row" justify="space-between" className='pt-3'>
-        <Flex></Flex>
+      <Flex direction="row" justify="space-between" className="pt-3">
+        {/*  Search Bar  */}
+        <Flex>
+          <IconButton
+            icon={menuIcon}
+            onClick={toggleSidebar}
+            _active={{ color: "#259237" }}
+            _hover={{ color: "#259237" }}
+            className="menu-icon ml-2"
+          />
+        </Flex>
+
+        {/* NOtifications and User Profile Dropdown Menus */}
         <Flex>
           <Menu isLazy className="notifications-dropdown">
             <MenuButton
