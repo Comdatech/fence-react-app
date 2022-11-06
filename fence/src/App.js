@@ -1,11 +1,19 @@
-//import local assets
-
-//import local components
+//authentication pages
 import Login from "./pages/Authentication/Login";
 import ForgotPassword from "./pages/Authentication/ForgotPassword";
 import SignUp from "./pages/Authentication/SignUp";
 
+//Landing Page
+import PageLayout from "./components/Navigation/pageLayout";
 import Home from "./pages/Landing/home";
+
+//device management pages
+import Devices from "./pages/Device-Management/devices";
+import Configurations from "./pages/Device-Management/configurations";
+
+//monitoring pages
+import Activity from "./pages/Monitoring/activity";
+import Alerts from "./pages/Monitoring/alerts";
 
 //import external libraries and assets
 import * as React from "react";
@@ -29,6 +37,10 @@ class App extends React.Component {
             <Route path="/sign-up" element={<SignUp />} />
 
             <Route path="/home" element={<Home />} />
+            <Route path="/devices" element={<Devices/>}/>
+            <Route path="/configurations" element={<Configurations/>}/>
+            <Route path="/alerts" element={<Alerts/>}/>
+            <Route path="/activity-log" element={<Activity/>}/>
             
           </Routes>
         </BrowserRouter>

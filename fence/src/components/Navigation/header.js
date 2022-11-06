@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 //import local assets
 import "../../assets/scss/components/Navigation/navigation.scss";
@@ -27,10 +27,10 @@ import {
   faArrowRightFromBracket,
   faLifeRing,
   faChevronDown,
-  faBars,
-  faXmark,
   faAnglesLeft,
   faChevronLeft,
+  faXmark, 
+  faBars,
   faAnglesRight,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
@@ -40,7 +40,7 @@ import { faBell } from '@fortawesome/free-regular-svg-icons';
 //display currrent path 
 
 
-const Header = () => {
+const Header = ({isSidebar, setSidebar}) => {
   //fontawesome icons 
     const userIcon = <FontAwesomeIcon className="icon" icon={faUser} />;
     const settingsIcon = <FontAwesomeIcon className="icon" icon={faGear} />;
@@ -75,20 +75,21 @@ const Header = () => {
       );
     };
 
-    //sidebar 
-    const [isSidebar, setSidebar] = useState(false);
 
-    const toggleSidebar = () => {
-      setSidebar(!isSidebar);
-    };
+    //toggle the menu sidebar 
+      const toggleSidebar = () => {
+        setSidebar(!isSidebar);
+      };
 
-    let menuIcon;
+      let menuIcon;
 
-    if (isSidebar) {
-      menuIcon = <FontAwesomeIcon className="icon" icon={faXmark} />;
-    } else {
-      menuIcon = <FontAwesomeIcon className="icon" icon={faBars} />;
-    }
+      if (isSidebar) {
+        menuIcon = <FontAwesomeIcon className="icon" icon={faXmark} />;
+      } else {
+        menuIcon = <FontAwesomeIcon className="icon" icon={faBars} />;
+      }
+
+   
     //dynamic variables will be decalred here at a later stage
     const username = "Dummy Name";
 
@@ -99,10 +100,10 @@ const Header = () => {
         justify="space-between"
         className="p-3 header"
         boxShadow="lg"
+        marginLeft={isSidebar? "15%" : "5%"}
       >
         {/* Sidebar Icon Menu and Current Page Display  */}
         <Flex>
-
           <IconButton
             icon={menuIcon}
             onClick={toggleSidebar}
@@ -111,7 +112,7 @@ const Header = () => {
             className="menu-icon  mr-4"
           />
 
-          <Flex align="center">
+          <Flex className='display-path' align="center">
             <Button
               colorScheme="green"
               variant="ghost"
@@ -127,7 +128,7 @@ const Header = () => {
               {back1}
             </Button>
             <Text
-              bgGradient="linear(to-l, #12100e, #2e3134)"
+              bgGradient="linear(to-l, #259237, #259237)"
               bgClip="text"
               fontSize="medium"
               fontWeight="semibold"

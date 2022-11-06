@@ -3,7 +3,7 @@ import React from 'react';
 //import local assets 
 
 //import local components
-import Header from "../../components/Navigation/header";
+import PageLayout from '../../components/Navigation/pageLayout';
 
 //import external libraries and assets 
 
@@ -11,7 +11,7 @@ import Header from "../../components/Navigation/header";
 const Home = () => {
   return (
     <>
-      <Header/>
+      <PageLayout/>
     </>
   )
 }
