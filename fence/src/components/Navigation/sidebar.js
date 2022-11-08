@@ -7,7 +7,7 @@ import Tooltips from "./tooltip";
 
 //import external libraries and assets
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrochip, faGears, faClockRotateLeft, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
@@ -24,6 +24,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
   const activityIcon = (<FontAwesomeIcon className="icon" icon={faClockRotateLeft} />);
 
 
+  const navigate = useNavigate();
   return (
     <>
       <Flex
@@ -34,7 +35,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
         align="center"
       >
         <Box className="pb-5">
-          <Link to="/home">
+          <Box onClick={() => navigate("/home")}>
             {isSidebar ? (
               <Image
                 w="90%"
@@ -50,12 +51,11 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                 alt="Comdatech Fence Monitoring"
               />
             )}
-          </Link>
+          </Box>
         </Box>
 
         <Flex direction="column">
           <List spacing={3}>
-
             <ListItem>
               <Tooltips
                 label="Home"
@@ -66,6 +66,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                     _active={{ color: "#259237" }}
                     _hover={{ color: "#259237" }}
                     className="nav-icon"
+                    onClick={() => navigate("/home")}
                   />
                 }
               />
@@ -81,6 +82,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                     _active={{ color: "#259237" }}
                     _hover={{ color: "#259237" }}
                     className="nav-icon"
+                    onClick={() => navigate("/devices")}
                   />
                 }
               />
@@ -96,6 +98,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                     _active={{ color: "#259237" }}
                     _hover={{ color: "#259237" }}
                     className="nav-icon"
+                    onClick={() => navigate("/configurations")}
                   />
                 }
               />
@@ -111,6 +114,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                     _active={{ color: "#259237" }}
                     _hover={{ color: "#259237" }}
                     className="nav-icon"
+                    onClick={() => navigate("/alerts")}
                   />
                 }
               />
@@ -126,6 +130,7 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
                     _active={{ color: "#259237" }}
                     _hover={{ color: "#259237" }}
                     className="nav-icon"
+                    onClick={() => navigate("/activity")}
                   />
                 }
               />

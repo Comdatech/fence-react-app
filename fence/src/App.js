@@ -4,7 +4,6 @@ import ForgotPassword from "./pages/Authentication/ForgotPassword";
 import SignUp from "./pages/Authentication/SignUp";
 
 //Landing Page
-import PageLayout from "./components/Navigation/pageLayout";
 import Home from "./pages/Landing/home";
 
 //device management pages
@@ -40,7 +39,7 @@ class App extends React.Component {
             <Route path="/devices" element={<Devices/>}/>
             <Route path="/configurations" element={<Configurations/>}/>
             <Route path="/alerts" element={<Alerts/>}/>
-            <Route path="/activity-log" element={<Activity/>}/>
+            <Route path="/activity" element={<Activity/>}/>
             
           </Routes>
         </BrowserRouter>
