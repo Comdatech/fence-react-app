@@ -100,7 +100,7 @@ const ForgotPassword = () => {
             Wait, I remember my password...{" "}
             <NavLink
               to="/"
-              className="fw-semibold text-primary text-decoration-underline"
+              className="text-primary"
             >
               Click here
             </NavLink>

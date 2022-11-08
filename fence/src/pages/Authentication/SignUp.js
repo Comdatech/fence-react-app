@@ -164,7 +164,7 @@ const SignUp = () => {
             Already have an account ?{" "}
             <NavLink
               to="/"
-              className="fw-semibold text-primary text-decoration-underline"
+              className="text-primary"
             >
               Sign In
             </NavLink>

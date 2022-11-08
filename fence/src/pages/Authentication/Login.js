@@ -92,7 +92,7 @@ const Login = () => {
                     </FormLabel>
                     <Box>
                       <NavLink
-                        className="fw-semibold text-primary text-decoration-underline"
+                        className="text-primary"
                         fontSize="sm"
                         to="/forgot-password"
                       >
@@ -131,7 +131,7 @@ const Login = () => {
             Don't have an account ?{" "}
             <NavLink
               to="/sign-up"
-              className="fw-semibold text-primary text-decoration-underline"
+              className="text-primary"
             >
               Sign Up
             </NavLink>
