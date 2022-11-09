@@ -2,6 +2,7 @@ import React from 'react';
 
 //import local assets
 import "../../assets/scss/components/Navigation/navigation.scss";
+import logo from "../../assets/icons/comdatech-logo-colour-dark.png";
 
 //import local components
 
@@ -98,59 +99,64 @@ const Header = ({isSidebar, setSidebar}) => {
       <Flex
         direction="row"
         justify="space-between"
-        className="p-3 header"
+        align="center"
+        className="header pl-4 pr-4"
         boxShadow="lg"
-        marginLeft={isSidebar? "15%" : "5%"}
       >
         {/* Sidebar Icon Menu and Current Page Display  */}
-        <Flex>
-          <IconButton
-            icon={menuIcon}
-            onClick={toggleSidebar}
-            _active={{ color: "#259237" }}
-            _hover={{ color: "#259237" }}
-            className="menu-icon  mr-4"
-          />
-
-          <Flex className='display-path' align="center">
-            <Button
-              colorScheme="green"
-              variant="ghost"
-              onClick={() => navigate(-2)}
-            >
-              {back2}
-            </Button>
-            <Button
-              colorScheme="green"
-              variant="ghost"
-              onClick={() => navigate(-1)}
-            >
-              {back1}
-            </Button>
-            <Text
-              bgGradient="linear(to-l, #259237, #259237)"
-              bgClip="text"
-              fontSize="medium"
-              fontWeight="semibold"
-              className="pathname"
-            >
-              {displayPath(location.pathname)}
-            </Text>
-            <Button
-              colorScheme="green"
-              variant="ghost"
-              onClick={() => navigate(1)}
-            >
-              {forward1}
-            </Button>
-            <Button
-              colorScheme="green"
-              variant="ghost"
-              onClick={() => navigate(2)}
-            >
-              {forward2}
-            </Button>
+        <Flex align="center" justify="center">
+          <Flex w="">
+            <IconButton
+              icon={menuIcon}
+              onClick={toggleSidebar}
+              _active={{ color: "#259237" }}
+              _hover={{ color: "#259237" }}
+              className="menu-icon  mr-5"
+            />
           </Flex>
+
+          <Flex align="center" justify="center" className="company-logo">
+            <img src={logo} alt="Comdatech logo" />
+          </Flex>
+        </Flex>
+        <Flex className="display-path" align="center">
+          <Button
+            colorScheme="green"
+            variant="ghost"
+            onClick={() => navigate(-2)}
+          >
+            {back2}
+          </Button>
+          <Button
+            colorScheme="green"
+            variant="ghost"
+            onClick={() => navigate(-1)}
+          >
+            {back1}
+          </Button>
+          <Text
+            bgGradient="linear(to-l, #259237, #259237)"
+            bgClip="text"
+            fontSize="medium"
+            fontWeight="semibold"
+            className="pathname"
+          >
+            {displayPath(location.pathname)}
+          </Text>
+          <Button
+            colorScheme="green"
+            variant="ghost"
+            onClick={() => navigate(1)}
+          >
+            {forward1}
+          </Button>
+          <Button
+            colorScheme="green"
+            variant="ghost"
+            onClick={() => navigate(2)}
+          >
+            {forward2}
+          </Button>
         </Flex>
 
         {/* Notifications and User Profile Dropdown Menus */}
@@ -159,7 +165,7 @@ const Header = ({isSidebar, setSidebar}) => {
             <MenuButton
               as={IconButton}
               icon={notificationIcon}
-              className="notifications-icon  mr-4"
+              className="notifications-icon  mr-5"
               _active={{ color: "#259237" }}
               _hover={{ color: "#259237" }}
             />

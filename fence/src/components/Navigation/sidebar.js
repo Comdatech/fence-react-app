@@ -1,20 +1,18 @@
 //import local assets
-import icon from "../../assets/icons/comdatech-icon-colour-dark.png";
-import logo from "../../assets/icons/comdatech-logo-colour-dark.png";
 
 //import local components
 import Tooltips from "./tooltip";
 
 //import external libraries and assets
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrochip, faGears, faClockRotateLeft, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { Box, Flex, IconButton, Image, List, ListItem} from '@chakra-ui/react';
+import {  Flex, IconButton,  List, ListItem} from '@chakra-ui/react';
 
 
-const Sidebar = ({ isSidebar, setSidebar }) => {
+const Sidebar = ({ isSidebar }) => {
 
   //fontawesome icons
   const devicesIcon = <FontAwesomeIcon className="icon" icon={faMicrochip} />;
@@ -24,50 +22,63 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
   const activityIcon = (<FontAwesomeIcon className="icon" icon={faClockRotateLeft} />);
 
 
+  //navigate is used to redirect to other pages
   const navigate = useNavigate();
+
+  //location is used to show the current page 
+  const location = useLocation();
+
+  const currPath = (props) =>{
+    console.log(props)
+    if (props===location.pathname){
+        return true;
+    }else{
+      return false;
+    }
+  };
+
+
   return (
     <>
       <Flex
         boxShadow="lg"
-        className={isSidebar ? "sidebar open" : "sidebar close"}
-        w={isSidebar ? "15%" : "5%"}
+        className={isSidebar ? "sidebar open pt-4" : "sidebar close pt-4"}
+        w={isSidebar ? "12%" : "5%"}
+        minWidth="fit-content"
         direction="column"
         align="center"
       >
-        <Box className="pb-5">
-          <Box onClick={() => navigate("/home")}>
-            {isSidebar ? (
-              <Image
-                w="90%"
-                margin="auto"
-                src={logo}
-                alt="Comdatech Fence Monitoring"
-              />
-            ) : (
-              <Image
-                maxH="72px"
-                justifyContent="center"
-                src={icon}
-                alt="Comdatech Fence Monitoring"
-              />
-            )}
-          </Box>
-        </Box>
-
         <Flex direction="column">
           <List spacing={3}>
             <ListItem>
               <Tooltips
                 label="Home"
                 element={
-                  <IconButton
-                    icon={homeIcon}
-                    size="lg"
-                    _active={{ color: "#259237" }}
-                    _hover={{ color: "#259237" }}
-                    className="nav-icon"
-                    onClick={() => navigate("/home")}
-                  />
+                  <Flex
+                    direction={isSidebar ? "row" : "column"}
+                    justify={isSidebar ? "flex-start" : "space-between"}
+                    align="center"
+                    className="mb-4 link-item"
+                  >
+                    <IconButton
+                      icon={homeIcon}
+                      size="lg"
+                      _hover={{ color: "#259237" }}
+                      className={
+                        currPath("/home") ? "nav-icon active" : "nav-icon"
+                      }
+                      onClick={() => navigate("/home")}
+                    />
+                    <NavLink
+                      to="/home"
+                      className={({ isActive }) =>
+                        isActive ? "link active" : "link"
+                      }
+                      data-tip="Home"
+                    >
+                      Home
+                    </NavLink>
+                  </Flex>
                 }
               />
             </ListItem>
@@ -76,14 +87,29 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
               <Tooltips
                 label="Devices"
                 element={
-                  <IconButton
-                    icon={devicesIcon}
-                    size="lg"
-                    _active={{ color: "#259237" }}
-                    _hover={{ color: "#259237" }}
-                    className="nav-icon"
-                    onClick={() => navigate("/devices")}
-                  />
+                  <Flex
+                    direction={isSidebar ? "row" : "column"}
+                    justify={isSidebar ? "flex-start" : "space-between"}
+                    align="center"
+                    className="mb-4 link-item"
+                  >
+                    <IconButton
+                      icon={devicesIcon}
+                      size="lg"
+                      _active={{ color: "#91e000" }}
+                      _hover={{ color: "#91e000" }}
+                      className="nav-icon"
+                      onClick={() => navigate("/devices")}
+                    />
+                    <NavLink
+                      to="/devices"
+                      className={({ isActive }) =>
+                        isActive ? "link active" : "link"
+                      }
+                    >
+                      Devices
+                    </NavLink>
+                  </Flex>
                 }
               />
             </ListItem>
@@ -92,14 +118,29 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
               <Tooltips
                 label="Configurations"
                 element={
-                  <IconButton
-                    icon={configsIcon}
-                    size="lg"
-                    _active={{ color: "#259237" }}
-                    _hover={{ color: "#259237" }}
-                    className="nav-icon"
-                    onClick={() => navigate("/configurations")}
-                  />
+                  <Flex
+                    direction={isSidebar ? "row" : "column"}
+                    justify={isSidebar ? "flex-start" : "space-between"}
+                    align="center"
+                    className="mb-4 link-item"
+                  >
+                    <IconButton
+                      icon={configsIcon}
+                      size="lg"
+                      _active={{ color: "#91e000" }}
+                      _hover={{ color: "#91e000" }}
+                      className="nav-icon"
+                      onClick={() => navigate("/configurations")}
+                    />
+                    <NavLink
+                      to="/configurations"
+                      className={({ isActive }) =>
+                        isActive ? "link active" : "link"
+                      }
+                    >
+                      Configurations
+                    </NavLink>
+                  </Flex>
                 }
               />
             </ListItem>
@@ -108,14 +149,29 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
               <Tooltips
                 label="Alerts"
                 element={
-                  <IconButton
-                    icon={alertsIcon}
-                    size="lg"
-                    _active={{ color: "#259237" }}
-                    _hover={{ color: "#259237" }}
-                    className="nav-icon"
-                    onClick={() => navigate("/alerts")}
-                  />
+                  <Flex
+                    direction={isSidebar ? "row" : "column"}
+                    justify={isSidebar ? "flex-start" : "space-between"}
+                    align="center"
+                    className="mb-4 link-item"
+                  >
+                    <IconButton
+                      icon={alertsIcon}
+                      size="lg"
+                      _active={{ color: "#91e000" }}
+                      _hover={{ color: "#91e000" }}
+                      className="nav-icon"
+                      onClick={() => navigate("/alerts")}
+                    />
+                    <NavLink
+                      to="/alerts"
+                      className={({ isActive }) =>
+                        isActive ? "link active" : "link"
+                      }
+                    >
+                      Alerts
+                    </NavLink>
+                  </Flex>
                 }
               />
             </ListItem>
@@ -124,14 +180,29 @@ const Sidebar = ({ isSidebar, setSidebar }) => {
               <Tooltips
                 label="Activity Log"
                 element={
-                  <IconButton
-                    icon={activityIcon}
-                    size="lg"
-                    _active={{ color: "#259237" }}
-                    _hover={{ color: "#259237" }}
-                    className="nav-icon"
-                    onClick={() => navigate("/activity")}
-                  />
+                  <Flex
+                    direction={isSidebar ? "row" : "column"}
+                    justify={isSidebar ? "flex-start" : "space-between"}
+                    align="center"
+                    className="link-item"
+                  >
+                    <IconButton
+                      icon={activityIcon}
+                      size="lg"
+                      _active={{ color: "#91e000" }}
+                      _hover={{ color: "#91e000" }}
+                      className="nav-icon"
+                      onClick={() => navigate("/activity")}
+                    />
+                    <NavLink
+                      to="/activity"
+                      className={({ isActive }) =>
+                        isActive ? "link active" : "link"
+                      }
+                    >
+                      Activity
+                    </NavLink>
+                  </Flex>
                 }
               />
             </ListItem>

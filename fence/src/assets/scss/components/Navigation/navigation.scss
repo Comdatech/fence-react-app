@@ -7,18 +7,23 @@
     transition: var(--tran-05);
     background-color: var(--cultured);
     z-index: 101;
+    height: 64px;
     .notifications-icon, .profile-btn, .menu-icon, .display-path{
     background: rgba(255, 255, 255, 0.9);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    height: 40px;
     
     }
 
     .pathname{
         text-transform: capitalize;
+    }
+    .company-logo{
+        img{
+            height: 50px;
+        }
     }
 
 }
@@ -27,7 +32,7 @@
 //sidebar sass
 .sidebar{
     position: fixed;
-    top: 0;
+    top: 64px;
     left: 0;
     height: 100%;
     padding: 10px 14px;
@@ -36,18 +41,45 @@
     transition: all 0.5s ease-in-out;
     background-color:  var(--cultured);
 
-    .nav-icon{
+    
+    .link-item{
+
+        &:hover{
+           
+            .nav-icon,.link{
+                color:var(--sheen-green);
+                 transition: var(--tran-03);
+            }
+        }
+
+        .nav-icon{
          background: rgba(255, 255, 255, 0.9);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         height: 48px;
+        &.active{
+            color: var(--sheen-green);
+            }
+        }
+
     }
+    
     &.open{
-         width: 15%;
+        .link{
+        font-weight: 500;
+        font-size: 18px;
+        padding-left: 8px;
+        &.active, &:hover{
+            color: var(--sheen-green);
+            
+        }
+    }
     }
     &.close{
-        width: 5%;
+        .link{
+            display: none;
+        }
     }
 }
