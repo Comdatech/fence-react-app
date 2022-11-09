@@ -98,7 +98,9 @@ const Sidebar = ({ isSidebar }) => {
                       size="lg"
                       _active={{ color: "#91e000" }}
                       _hover={{ color: "#91e000" }}
-                      className="nav-icon"
+                      className={
+                        currPath("/devices") ? "nav-icon active" : "nav-icon"
+                      }
                       onClick={() => navigate("/devices")}
                     />
                     <NavLink
@@ -129,7 +131,11 @@ const Sidebar = ({ isSidebar }) => {
                       size="lg"
                       _active={{ color: "#91e000" }}
                       _hover={{ color: "#91e000" }}
-                      className="nav-icon"
+                      className={
+                        currPath("/configurations")
+                          ? "nav-icon active"
+                          : "nav-icon"
+                      }
                       onClick={() => navigate("/configurations")}
                     />
                     <NavLink
@@ -160,7 +166,9 @@ const Sidebar = ({ isSidebar }) => {
                       size="lg"
                       _active={{ color: "#91e000" }}
                       _hover={{ color: "#91e000" }}
-                      className="nav-icon"
+                      className={
+                        currPath("/alerts") ? "nav-icon active" : "nav-icon"
+                      }
                       onClick={() => navigate("/alerts")}
                     />
                     <NavLink
@@ -191,7 +199,9 @@ const Sidebar = ({ isSidebar }) => {
                       size="lg"
                       _active={{ color: "#91e000" }}
                       _hover={{ color: "#91e000" }}
-                      className="nav-icon"
+                      className={
+                        currPath("/activity") ? "nav-icon active" : "nav-icon"
+                      }
                       onClick={() => navigate("/activity")}
                     />
                     <NavLink
