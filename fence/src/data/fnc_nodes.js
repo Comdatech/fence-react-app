@@ -1,0 +1,50 @@
+export const fnc_nodes = [
+  {
+    device_id: "DGD_FNC_RN01",
+    device_name: "Device 1",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  },
+  {
+    device_id: "DGD_FNC_LN02",
+    device_name: "Device 2",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  },
+  {
+    device_id: "DGD_FNC_CN03",
+    device_name: "Device 3",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  },
+  {
+    device_id: "DGD_FNC_LN04",
+    device_name: "Device 4",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  },
+  {
+    device_id: "DGD_FNC_RN05",
+    device_name: "Device 5",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  },
+  {
+    device_id: "DGD_FNC_RN06",
+    device_name: "Device 6",
+    lat: "",
+    long: "",
+    node_type: "",
+    status: "",
+  }
+];
