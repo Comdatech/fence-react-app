@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b105236f.css",
+    "main.js": "/static/js/main.0f77a101.js",
+    "static/media/comdatech-icon-colour-dark.png": "/static/media/comdatech-icon-colour-dark.a435e4d28cea5eeca4ce.png",
+    "static/media/comdatech-logo-colour-dark.png": "/static/media/comdatech-logo-colour-dark.2c14806fa95134860bd8.png",
+    "index.html": "/index.html",
+    "main.b105236f.css.map": "/static/css/main.b105236f.css.map",
+    "main.0f77a101.js.map": "/static/js/main.0f77a101.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b105236f.css",
+    "static/js/main.0f77a101.js"
+  ]
+}
