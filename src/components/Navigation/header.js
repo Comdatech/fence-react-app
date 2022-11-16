@@ -68,7 +68,7 @@ const Header = ({isSidebar, setSidebar}) => {
           temp= props;
       };
 
-      newPath = temp.replace("/", " > ")
+      newPath = temp.replace("/", " ~ ");
       return (
         <>
           {newPath}
@@ -193,7 +193,9 @@ const Header = ({isSidebar, setSidebar}) => {
               </Center>
             </MenuButton>
             <MenuList>
-              <MenuItem icon={userIcon}>Profile</MenuItem>
+              <MenuItem icon={userIcon} onClick={() => navigate("/user/profile")}>
+                Profile
+              </MenuItem>
               <MenuDivider />
               <MenuItem icon={settingsIcon}>Settings</MenuItem>
               <MenuDivider />

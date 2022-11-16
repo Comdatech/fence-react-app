@@ -3,6 +3,9 @@ import Login from "./pages/Authentication/Login";
 import ForgotPassword from "./pages/Authentication/ForgotPassword";
 import SignUp from "./pages/Authentication/SignUp";
 
+//User pages
+import Profile from "./pages/User/profile";
+
 //Landing Page
 import Home from "./pages/Landing/home";
 
@@ -17,6 +20,7 @@ import Alerts from "./pages/Monitoring/alerts";
 //import external libraries and assets
 import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 class App extends React.Component {
   constructor() {
@@ -40,6 +44,8 @@ class App extends React.Component {
             <Route path="/configurations" element={<Configurations/>}/>
             <Route path="/alerts" element={<Alerts/>}/>
             <Route path="/activity" element={<Activity/>}/>
+
+            <Route path="/user/profile" element={<Profile/>}/>
             
           </Routes>
         </BrowserRouter>
