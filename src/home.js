@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <PageLayout/>
-      <Flex marginTop="100px" marginLeft="100px">
+      <Flex justify="space-between" direction="column" marginTop="100px" marginLeft="100px">
         {(typeof backendData.users === 'undefined')? (
           <p>Loading...</p>
         ):(
