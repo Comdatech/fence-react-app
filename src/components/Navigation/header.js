@@ -111,7 +111,7 @@ const Header = ({isSidebar, setSidebar}) => {
               onClick={toggleSidebar}
               _active={{ color: "#259237" }}
               _hover={{ color: "#259237" }}
-              className="menu-icon  mr-5"
+              className="menu-icon  mr-5 mr-sm-3"
             />
           </Flex>
 
@@ -120,6 +120,7 @@ const Header = ({isSidebar, setSidebar}) => {
           </Flex>
         </Flex>
         <Flex className="display-path" align="center">
+          
           <Button
             colorScheme="green"
             variant="ghost"
@@ -165,7 +166,7 @@ const Header = ({isSidebar, setSidebar}) => {
             <MenuButton
               as={IconButton}
               icon={notificationIcon}
-              className="notifications-icon  mr-5"
+              className="notifications-icon  mr-5 mr-sm-3"
               _active={{ color: "#259237" }}
               _hover={{ color: "#259237" }}
             />
@@ -187,13 +188,16 @@ const Header = ({isSidebar, setSidebar}) => {
                   src="dummy pic here"
                   className="avatar"
                 />
-                <Text paddingLeft="1" className="username">
+                <p className="username">
                   {username}
-                </Text>
+                </p>
               </Center>
             </MenuButton>
             <MenuList>
-              <MenuItem icon={userIcon} onClick={() => navigate("/user/profile")}>
+              <MenuItem
+                icon={userIcon}
+                onClick={() => navigate("/user/profile")}
+              >
                 Profile
               </MenuItem>
               <MenuDivider />

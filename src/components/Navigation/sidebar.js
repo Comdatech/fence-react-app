@@ -4,7 +4,7 @@
 import Tooltips from "./tooltip";
 
 //import external libraries and assets
-import React from 'react';
+import React, {useEffect} from 'react';
 import {  NavLink, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrochip, faGears, faClockRotateLeft, faHouse } from '@fortawesome/free-solid-svg-icons';
@@ -12,31 +12,42 @@ import { faBell } from '@fortawesome/free-regular-svg-icons';
 import {  Flex, IconButton,  List, ListItem} from '@chakra-ui/react';
 
 
-const Sidebar = ({ isSidebar }) => {
+const Sidebar = ({ isSidebar, ref, width, setWidth }) => {
+  // This function calculates width of the sidebar
+  const getListSize = () => {
+    const newWidth = ref.current.clientWidth;
+    setWidth(newWidth);
+  };
+
+  // Update 'width' when the window resizes
+  useEffect(() => {
+    window.addEventListener("resize", getListSize);
+  })
+
 
   //fontawesome icons
   const devicesIcon = <FontAwesomeIcon className="icon" icon={faMicrochip} />;
   const homeIcon = <FontAwesomeIcon className="icon" icon={faHouse} />;
   const configsIcon = <FontAwesomeIcon className="icon" icon={faGears} />;
   const alertsIcon = <FontAwesomeIcon className="icon" icon={faBell} />;
-  const activityIcon = (<FontAwesomeIcon className="icon" icon={faClockRotateLeft} />);
-
+  const activityIcon = (
+    <FontAwesomeIcon className="icon" icon={faClockRotateLeft} />
+  );
 
   //navigate is used to redirect to other pages
   const navigate = useNavigate();
 
-  //location is used to show the current page 
+  //location is used to show the current page
   const location = useLocation();
 
-  const currPath = (props) =>{
-    console.log(props)
-    if (props===location.pathname){
-        return true;
-    }else{
+  const currPath = (props) => {
+    console.log(props);
+    if (props === location.pathname) {
+      return true;
+    } else {
       return false;
     }
   };
-
 
   return (
     <>
@@ -47,6 +58,7 @@ const Sidebar = ({ isSidebar }) => {
         minWidth="fit-content"
         direction="column"
         align="center"
+        ref={ref}
       >
         <Flex direction="column">
           <List spacing={3}>
@@ -216,6 +228,7 @@ const Sidebar = ({ isSidebar }) => {
                 }
               />
             </ListItem>
+
           </List>
         </Flex>
       </Flex>
