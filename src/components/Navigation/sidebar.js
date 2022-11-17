@@ -4,7 +4,7 @@
 import Tooltips from "./tooltip";
 
 //import external libraries and assets
-import React, {useEffect} from 'react';
+import React from 'react';
 import {  NavLink, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrochip, faGears, faClockRotateLeft, faHouse } from '@fortawesome/free-solid-svg-icons';
@@ -12,18 +12,8 @@ import { faBell } from '@fortawesome/free-regular-svg-icons';
 import {  Flex, IconButton,  List, ListItem} from '@chakra-ui/react';
 
 
-const Sidebar = ({ isSidebar, ref, width, setWidth }) => {
-  // This function calculates width of the sidebar
-  const getListSize = () => {
-    const newWidth = ref.current.clientWidth;
-    setWidth(newWidth);
-  };
-
-  // Update 'width' when the window resizes
-  useEffect(() => {
-    window.addEventListener("resize", getListSize);
-  })
-
+const Sidebar = ({ isSidebar }) => {
+  
 
   //fontawesome icons
   const devicesIcon = <FontAwesomeIcon className="icon" icon={faMicrochip} />;
@@ -58,7 +48,6 @@ const Sidebar = ({ isSidebar, ref, width, setWidth }) => {
         minWidth="fit-content"
         direction="column"
         align="center"
-        ref={ref}
       >
         <Flex direction="column">
           <List spacing={3}>

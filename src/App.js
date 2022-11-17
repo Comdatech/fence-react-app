@@ -7,7 +7,7 @@ import SignUp from "./pages/Authentication/SignUp";
 import Profile from "./pages/User/profile";
 
 //Landing Page
-import Home from "./pages/Landing/home";
+import Home from "./home";
 
 //device management pages
 import Devices from "./pages/Device-Management/devices";
