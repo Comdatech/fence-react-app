@@ -10,6 +10,7 @@ import Devices from "./pages/Device-Management/devices";
 import Configurations from "./pages/Device-Management/configurations";
 import Activity from "./pages/Monitoring/activity";
 import Alerts from "./pages/Monitoring/alerts";
+import Profile from "./pages/User/profile";
 import { Button } from "@chakra-ui/react";
 
 
