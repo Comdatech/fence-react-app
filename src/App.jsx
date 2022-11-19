@@ -10,27 +10,8 @@ import Devices from "./pages/Device-Management/devices";
 import Configurations from "./pages/Device-Management/configurations";
 import Activity from "./pages/Monitoring/activity";
 import Alerts from "./pages/Monitoring/alerts";
+import { Button } from "@chakra-ui/react";
 
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
-import { loginRequest } from "./authConfig";
-// import { PageLayout } from "./components/PageLayout";
-// import { ProfileData } from "./components/ProfileData";
-import { callMsGraph } from "./graph";
-
-// Renders information about the signed-in user or a button to retrieve data about the user
-const ProfileContent = () => {
-  const { instance, accounts } = useMsal();
-  const [graphData, setGraphData] = useState(null);
-
-  function RequestProfileData(){
-    instance.acquireTokenSilent({
-        ...loginRequest,
-        account: accounts[0]
-    }).then((response) => {
-      callMsGraph(response.accessToken).then(response => setGraphData(response));
-    });
-  }
-};
 
 
 class App extends React.Component {
